@@ -13,7 +13,7 @@ def adicionar_tarefa(titulo):
     Adiciona uma nova tarefa à lista.
     Dica: use append() para inserir o título na lista 'tarefas'.
     """
-    # TODO: implementar lógica de adicionar tarefa
+    # TODO: implemente aqui lógica de adicionar tarefa
     pass
 
 
