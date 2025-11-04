@@ -9,13 +9,15 @@ tarefas = []
 
 # Desafio 01: Adicionar uma nova tarefa
 def adicionar_tarefa(titulo):
-    """
-    Adiciona uma nova tarefa à lista.
-    Dica: use append() para inserir o título na lista 'tarefas'.
-    """
-    # TODO: implemente aqui lógica de adicionar tarefa
-    pass
-
+    if titulo.strip() == "":
+        print("Título inválido! Tente novamente.")
+        return
+    elif titulo in tarefas:
+        print(f"Tarefa '{titulo}' já existe! Tente novamente.")
+        return
+    else:
+        tarefas.append(titulo)
+        print(f"Tarefa '{titulo}' adicionada com sucesso!")
 
 # Desafio 02: Listar todas as tarefas
 def listar_tarefas():
@@ -102,4 +104,4 @@ def menu():
 # 2️ Faça commit das alterações, para cada commit crie uma tag.
 # 3️ Crie a tag final: tag: desafios-completos-v1.0
 
-# menu()  # Descomente para testar
+menu()  # Descomente para testar
