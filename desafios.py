@@ -61,6 +61,11 @@ def remover_tarefa(indice):
     Dica: use pop() para remover da lista.
     """
     # TODO: implementar lógica de remoção
+    if indice >= 0 and indice < len(tarefas):
+        tarefa_removida = tarefas.pop(indice)
+        print(f"✓ Tarefa '{tarefa_removida}' removida!")
+    else:
+        print("Erro: tarefa não encontrada!")
     pass
 
 
