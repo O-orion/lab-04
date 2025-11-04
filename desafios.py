@@ -58,8 +58,11 @@ def remover_tarefa(indice):
     Remove uma tarefa pelo índice.
     Dica: use pop() para remover da lista.
     """
-    # TODO: implementar lógica de remoção
-    pass
+   if 1 <= indice <= len(tarefas):
+        removida = tarefas.pop(indice - 1)
+        print(f"Tarefa '{removida}' removida com sucesso!")
+    else:
+        print("Índice inválido!")
 
 
 # Desafio 05: Buscar tarefa pelo nome
