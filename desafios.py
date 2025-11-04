@@ -95,7 +95,7 @@ def menu():
     Dica: use um while True e input() para ler opções do usuário.
     """
     while True:
-        print("\n--- MENU TO-DO ---")
+        print("\n-- MENU TO-DO --")
         print("1 - Adicionar tarefa")
         print("2 - Listar tarefas")
         print("3 - Concluir tarefa")
