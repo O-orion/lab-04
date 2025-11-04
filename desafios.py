@@ -76,6 +76,15 @@ def buscar_tarefa(nome):
     Dica: use um loop para percorrer a lista e comparar strings.
     """
     # TODO: implementar lógica de busca
+    encontrou = False
+    print("\n--- RESULTADOS DA BUSCA ---")
+
+    for indice, tarefa in enumerate(tarefas):
+        if nome.lower() in tarefa.lower():
+            print(f"{indice} - {tarefa}")
+            encontrou = True
+    if not encontrou:
+        print(f"Nenhuma tarefa encontrada com '{nome}'.")
     pass
 
 
