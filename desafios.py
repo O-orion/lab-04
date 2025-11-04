@@ -13,8 +13,11 @@ def adicionar_tarefa(titulo):
     Adiciona uma nova tarefa à lista.
     Dica: use append() para inserir o título na lista 'tarefas'.
     """
-    # TODO: implemente aqui lógica de adicionar tarefa
-    pass
+    if titulo.strip() != "":
+        tarefas.append(titulo.strip())
+        print(f"Tarefa '{titulo}' adicionada com sucesso!")
+    else:
+        print("Título inválido. Tente novamente.")
 
 
 # Desafio 02: Listar todas as tarefas
