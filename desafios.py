@@ -26,8 +26,12 @@ def listar_tarefas():
     Exibe todas as tarefas da lista numeradas.
     Dica: use um for com enumerate() para mostrar o índice e o nome.
     """
-    # TODO: implementar lógica de listagem
-    pass
+    if len(tarefas) == 0:
+        print("Nenhuma tarefa cadastrada.")
+    else:
+        print("\n--- LISTA DE TAREFAS ---")
+        for i, tarefa in enumerate(tarefas, start=1):
+            print(f"{i}. {tarefa}")
 
 
 # Desafio 03: Marcar uma tarefa como concluída
