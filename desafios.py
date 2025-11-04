@@ -43,6 +43,14 @@ def concluir_tarefa(indice):
     Exemplo: 'Estudar Git' → 'Estudar Git - ok'
     """
     # TODO: implementar lógica de conclusão de tarefa
+    if indice >= 0 and indice < len(tarefas):
+        if " - ok" not in tarefas[indice]:
+            tarefas[indice] = tarefas[indice] + " - ok"
+            print(f"✓ Tarefa {indice} marcada como concluída!")
+        else:
+            print("Essa tarefa já está concluída!")
+    else:
+        print("Erro: tarefa não encontrada!")
     pass
 
 
