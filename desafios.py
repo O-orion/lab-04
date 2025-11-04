@@ -14,6 +14,8 @@ def adicionar_tarefa(titulo):
     Dica: use append() para inserir o título na lista 'tarefas'.
     """
     # TODO: implemente aqui lógica de adicionar tarefa
+    tarefas.append(titulo)
+    print(f"✓ Tarefa '{titulo}' adicionada com sucesso!")
     pass
 
 
