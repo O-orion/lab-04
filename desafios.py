@@ -103,7 +103,7 @@ def menu():
         print("5 - Buscar tarefa")
         print("0 - Sair")
 
-        opcao = input("Escolha: ")
+        opcao = input("Escolha:")
 
         if opcao == "1":
             titulo = input("Título da tarefa: ")
