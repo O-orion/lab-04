@@ -13,8 +13,8 @@ def adicionar_tarefa(titulo):
     Adiciona uma nova tarefa à lista.
     Dica: use append() para inserir o título na lista 'tarefas'.
     """
-    # TODO: implemente aqui lógica de adicionar tarefa
-    pass
+    tarefas.append(titulo)
+    print(f"Tarefa '{titulo}' adicionada com sucesso!")
 
 
 # Desafio 02: Listar todas as tarefas
@@ -23,8 +23,12 @@ def listar_tarefas():
     Exibe todas as tarefas da lista numeradas.
     Dica: use um for com enumerate() para mostrar o índice e o nome.
     """
-    # TODO: implementar lógica de listagem
-    pass
+    if not tarefas:
+        print("\nNenhuma tarefa na lista.")
+        return
+    print("\nTarefas listadas: \n")
+    for i, tarefa in enumerate(tarefas):
+        print(f"{i} - {tarefa}")
 
 
 # Desafio 03: Marcar uma tarefa como concluída
@@ -34,8 +38,14 @@ def concluir_tarefa(indice):
     Dica: você pode alterar o texto da tarefa adicionando um 'ok' no início.
     Exemplo: 'Estudar Git' → 'Estudar Git - ok'
     """
-    # TODO: implementar lógica de conclusão de tarefa
-    pass
+    if not tarefas:
+        print("\nNenhuma tarefa na lista.")
+        return
+    for i, tarefa in enumerate(tarefas):
+        if i == indice:
+            nova_tarefa = tarefa + ' - ok'
+    
+    tarefas[indice] = nova_tarefa
 
 
 # Desafio 04: Remover uma tarefa
@@ -44,8 +54,8 @@ def remover_tarefa(indice):
     Remove uma tarefa pelo índice.
     Dica: use pop() para remover da lista.
     """
-    # TODO: implementar lógica de remoção
-    pass
+    tarefa_removida = tarefas.pop(indice)
+    print(f"Tarefa '{tarefa_removida}' removida com sucesso!")
 
 
 # Desafio 05: Buscar tarefa pelo nome
@@ -54,8 +64,10 @@ def buscar_tarefa(nome):
     Busca uma tarefa pelo nome e retorna se ela existe ou não.
     Dica: use um loop para percorrer a lista e comparar strings.
     """
-    # TODO: implementar lógica de busca
-    pass
+    if nome in tarefas:
+        print(f'Tarefa {nome} existe')
+    else:
+        print(f'Tarefa {nome} não existe')
 
 
 # Desafio 06: Menu interativo (opcional)
