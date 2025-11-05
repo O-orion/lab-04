@@ -13,8 +13,7 @@ def adicionar_tarefa(titulo):
     Adiciona uma nova tarefa à lista.
     Dica: use append() para inserir o título na lista 'tarefas'.
     """
-    # TODO: implemente aqui lógica de adicionar tarefa
-    pass
+    tarefas.append(titulo)
 
 
 # Desafio 02: Listar todas as tarefas
@@ -23,8 +22,8 @@ def listar_tarefas():
     Exibe todas as tarefas da lista numeradas.
     Dica: use um for com enumerate() para mostrar o índice e o nome.
     """
-    # TODO: implementar lógica de listagem
-    pass
+    for i, e in enumerate(tarefas):
+        print(f"{i} - {e}")
 
 
 # Desafio 03: Marcar uma tarefa como concluída
@@ -34,8 +33,9 @@ def concluir_tarefa(indice):
     Dica: você pode alterar o texto da tarefa adicionando um 'ok' no início.
     Exemplo: 'Estudar Git' → 'Estudar Git - ok'
     """
-    # TODO: implementar lógica de conclusão de tarefa
-    pass
+    if 0 <= indice < len(tarefas):
+        if not tarefas[indice].endswith(" - ok"):
+            tarefas[indice] = f"{tarefas[indice]} - ok"
 
 
 # Desafio 04: Remover uma tarefa
@@ -44,8 +44,7 @@ def remover_tarefa(indice):
     Remove uma tarefa pelo índice.
     Dica: use pop() para remover da lista.
     """
-    # TODO: implementar lógica de remoção
-    pass
+    tarefas.pop(indice)
 
 
 # Desafio 05: Buscar tarefa pelo nome
@@ -54,8 +53,14 @@ def buscar_tarefa(nome):
     Busca uma tarefa pelo nome e retorna se ela existe ou não.
     Dica: use um loop para percorrer a lista e comparar strings.
     """
-    # TODO: implementar lógica de busca
-    pass
+    encontradas = False
+    for i, tarefa in enumerate(tarefas):
+        if nome.lower() in tarefa.lower():
+            print(f"{i} - {tarefa}")
+            encontradas = True
+
+    if not encontradas:
+        print("Nenhuma tarefa encontrada.")
 
 
 # Desafio 06: Menu interativo (opcional)
@@ -102,4 +107,4 @@ def menu():
 # 2️ Faça commit das alterações, para cada commit crie uma tag.
 # 3️ Crie a tag final: tag: desafios-completos-v1.0
 
-# menu()  # Descomente para testar
+menu()  # Descomente para testar
