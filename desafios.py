@@ -40,7 +40,11 @@ def concluir_tarefa(indice):
     Exemplo: 'Estudar Git' → 'Estudar Git - ok'
     """
     # TODO: implementar lógica de conclusão de tarefa
-    pass
+    if 0 < indice <= len(tarefas):
+        tarefas[indice - 1] = tarefas[indice - 1] + " - ok"
+        print(f"Tarefa {indice} concluída.")
+    else:
+        print("Índice de tarefa inválido.")
 
 
 # Desafio 04: Remover uma tarefa
