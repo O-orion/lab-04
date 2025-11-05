@@ -21,8 +21,9 @@ def listar_tarefas():
 # Desafio 03: Marcar uma tarefa como concluída
 def concluir_tarefa(indice):
     texto = tarefas[indice]
+    print(texto)
     tarefa_concluida = texto + ' - ok '
-    return tarefa_concluida
+    print(tarefa_concluida)
 
 
 # Desafio 04: Remover uma tarefa
@@ -33,11 +34,11 @@ def remover_tarefa(indice):
 
 # Desafio 05: Buscar tarefa pelo nome
 def buscar_tarefa(nome):
-    for item in tarefas:
-        if item:
-            print(item)
-        else:
-            print("Nao existem tarefas no momento!")
+ 
+    if nome in tarefas:
+        print(nome)
+    else:
+        print("Nao existem tarefas no momento!")
 
 
 # Desafio 06: Menu interativo (opcional)
@@ -84,4 +85,4 @@ def menu():
 # 2️ Faça commit das alterações, para cada commit crie uma tag.
 # 3️ Crie a tag final: tag: desafios-completos-v1.0
 
-# menu()  # Descomente para testar
+menu()  # Descomente para testar
