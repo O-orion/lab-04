@@ -59,7 +59,7 @@ def remover_tarefa(indice):
         tarefas.pop(indice) 
     else:
         print("Índice inválido!")
-    
+
     pass
 
 
@@ -70,6 +70,11 @@ def buscar_tarefa(nome):
     Dica: use um loop para percorrer a lista e comparar strings.
     """
     # TODO: implementar lógica de busca
+    for tarefa in tarefas:
+        if nome in tarefa:
+            print(f"Tarefa encontrada: {tarefa}")
+            return
+    print("Tarefa não encontrada.")
     pass
 
 
