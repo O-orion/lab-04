@@ -29,7 +29,7 @@ def listar_tarefas():
     if len(tarefas) == 0:
         print("Nenhuma tarefa cadastrada.")
     else:
-        print("\n--- LISTA DE TAREFAS ---")
+        print("\n-- LISTA DE TAREFAS --")
         for indice, tarefa in enumerate(tarefas):
             print(f"{indice} - {tarefa}")
     pass
