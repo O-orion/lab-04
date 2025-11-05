@@ -14,7 +14,7 @@ def adicionar_tarefa(titulo):
     Dica: use append() para inserir o título na lista 'tarefas'.
     """
     # TODO: implemente aqui lógica de adicionar tarefa
-    pass
+    tarefas.append(titulo)
 
 
 # Desafio 02: Listar todas as tarefas
@@ -94,6 +94,14 @@ def menu():
             break
         else:
             print("Opção inválida! Tente novamente.")
+
+
+def main():
+    menu()
+
+
+if __name__ == "__main__":
+    main()
 
 
 # Dica Final:
