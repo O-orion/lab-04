@@ -14,6 +14,8 @@ def adicionar_tarefa(titulo):
     Dica: use append() para inserir o título na lista 'tarefas'.
     """
     # TODO: implemente aqui lógica de adicionar tarefa
+    tarefas.append(titulo)
+    print(f"✓ Tarefa '{titulo}' adicionada com sucesso!")
     pass
 
 
@@ -24,6 +26,12 @@ def listar_tarefas():
     Dica: use um for com enumerate() para mostrar o índice e o nome.
     """
     # TODO: implementar lógica de listagem
+    if len(tarefas) == 0:
+        print("Nenhuma tarefa cadastrada.")
+    else:
+        print("\n-- LISTA DE TAREFAS --")
+        for indice, tarefa in enumerate(tarefas):
+            print(f"{indice} - {tarefa}")
     pass
 
 
@@ -35,6 +43,14 @@ def concluir_tarefa(indice):
     Exemplo: 'Estudar Git' → 'Estudar Git - ok'
     """
     # TODO: implementar lógica de conclusão de tarefa
+    if indice >= 0 and indice < len(tarefas):
+        if " - ok" not in tarefas[indice]:
+            tarefas[indice] = tarefas[indice] + " - ok"
+            print(f"✓ Tarefa {indice} marcada como concluída!")
+        else:
+            print("Essa tarefa já está concluída!")
+    else:
+        print("Erro: tarefa não encontrada!")
     pass
 
 
@@ -45,6 +61,11 @@ def remover_tarefa(indice):
     Dica: use pop() para remover da lista.
     """
     # TODO: implementar lógica de remoção
+    if indice >= 0 and indice < len(tarefas):
+        tarefa_removida = tarefas.pop(indice)
+        print(f"✓ Tarefa '{tarefa_removida}' removida!")
+    else:
+        print("Erro: tarefa não encontrada!")
     pass
 
 
@@ -55,6 +76,15 @@ def buscar_tarefa(nome):
     Dica: use um loop para percorrer a lista e comparar strings.
     """
     # TODO: implementar lógica de busca
+    encontrou = False
+    print("\n--- RESULTADOS DA BUSCA ---")
+
+    for indice, tarefa in enumerate(tarefas):
+        if nome.lower() in tarefa.lower():
+            print(f"{indice} - {tarefa}")
+            encontrou = True
+    if not encontrou:
+        print(f"Nenhuma tarefa encontrada com '{nome}'.")
     pass
 
 
@@ -65,7 +95,7 @@ def menu():
     Dica: use um while True e input() para ler opções do usuário.
     """
     while True:
-        print("\n--- MENU TO-DO ---")
+        print("\n-- MENU TO-DO --")
         print("1 - Adicionar tarefa")
         print("2 - Listar tarefas")
         print("3 - Concluir tarefa")
@@ -73,7 +103,7 @@ def menu():
         print("5 - Buscar tarefa")
         print("0 - Sair")
 
-        opcao = input("Escolha: ")
+        opcao = input("Escolha:")
 
         if opcao == "1":
             titulo = input("Título da tarefa: ")
