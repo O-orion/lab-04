@@ -25,7 +25,9 @@ def listar_tarefas():
     Dica: use um for com enumerate() para mostrar o índice e o nome.
     """
     # TODO: implementar lógica de listagem
-    pass
+    for t in tarefas:
+        print("Tarefas:")
+        print(f"- {t}")
 
 
 # Desafio 03: Marcar uma tarefa como concluída
