@@ -14,6 +14,7 @@ def adicionar_tarefa(titulo):
     Dica: use append() para inserir o título na lista 'tarefas'.
     """
     # TODO: implemente aqui lógica de adicionar tarefa
+    tarefas.append(titulo)
     pass
 
 
@@ -24,6 +25,10 @@ def listar_tarefas():
     Dica: use um for com enumerate() para mostrar o índice e o nome.
     """
     # TODO: implementar lógica de listagem
+    for indice, tarefa in enumerate(tarefas):
+        print(f"{indice} - {tarefa}")
+    print() 
+    
     pass
 
 
@@ -35,6 +40,11 @@ def concluir_tarefa(indice):
     Exemplo: 'Estudar Git' → 'Estudar Git - ok'
     """
     # TODO: implementar lógica de conclusão de tarefa
+    if 0 <= indice < len(tarefas):
+        tarefas[indice] += " - ok"
+    else:
+        print("Índice inválido!")
+
     pass
 
 
@@ -45,6 +55,11 @@ def remover_tarefa(indice):
     Dica: use pop() para remover da lista.
     """
     # TODO: implementar lógica de remoção
+    if 0 <= indice < len(tarefas):
+        tarefas.pop(indice) 
+    else:
+        print("Índice inválido!")
+
     pass
 
 
@@ -55,6 +70,11 @@ def buscar_tarefa(nome):
     Dica: use um loop para percorrer a lista e comparar strings.
     """
     # TODO: implementar lógica de busca
+    for tarefa in tarefas:
+        if nome in tarefa:
+            print(f"Tarefa encontrada: {tarefa}")
+            return
+    print("Tarefa não encontrada.")
     pass
 
 
@@ -102,4 +122,4 @@ def menu():
 # 2️ Faça commit das alterações, para cada commit crie uma tag.
 # 3️ Crie a tag final: tag: desafios-completos-v1.0
 
-# menu()  # Descomente para testar
+menu()  # Descomente para testar
