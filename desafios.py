@@ -25,6 +25,10 @@ def listar_tarefas():
     Dica: use um for com enumerate() para mostrar o índice e o nome.
     """
     # TODO: implementar lógica de listagem
+    for indice, tarefa in enumerate(tarefas):
+        print(f"{indice} - {tarefa}")
+    print() 
+    
     pass
 
 
