@@ -29,13 +29,19 @@ def listar_tarefas():
 
 # Desafio 03: Marcar uma tarefa como concluída
 def concluir_tarefa(indice):
-    """
-    Marca uma tarefa como concluída.
-    Dica: você pode alterar o texto da tarefa adicionando um 'ok' no início.
-    Exemplo: 'Estudar Git' → 'Estudar Git - ok'
-    """
-    # TODO: implementar lógica de conclusão de tarefa
-    pass
+    try:        
+        indice_real = indice - 1
+        
+        if 0 <= indice_real < len(tarefas):
+            if " - ok" not in tarefas[indice_real]:
+                tarefas[indice_real] += " - ok"
+                print(f"Tarefa {indice} marcada como concluída!")
+            else:
+                print(f"Tarefa {indice} já estava concluída.")
+        else:
+            print(f"Erro: Tarefa {indice} não encontrada.")
+    except Exception as e:
+        print(f"Erro ao concluir tarefa: {e}")
 
 
 # Desafio 04: Remover uma tarefa
