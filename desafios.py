@@ -40,6 +40,11 @@ def concluir_tarefa(indice):
     Exemplo: 'Estudar Git' → 'Estudar Git - ok'
     """
     # TODO: implementar lógica de conclusão de tarefa
+    if 0 <= indice < len(tarefas):
+        tarefas[indice] += " - ok"
+    else:
+        print("Índice inválido!")
+
     pass
 
 
