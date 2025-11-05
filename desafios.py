@@ -98,13 +98,21 @@ def menu():
         elif opcao == "2":
             listar_tarefas()
         elif opcao == "3":
-            indice = int(input("Número da tarefa: "))
-            concluir_tarefa(indice)
+            try:
+                # Adicionado try/except para evitar quebrar se o usuário não digitar um número
+                indice = int(input("Número da tarefa a concluir: "))
+                concluir_tarefa(indice)
+            except ValueError:
+                print("Erro: Por favor, digite um número válido.")
         elif opcao == "4":
-            indice = int(input("Número da tarefa: "))
-            remover_tarefa(indice)
+            try:
+                # Adicionado try/except para evitar quebrar se o usuário não digitar um número
+                indice = int(input("Número da tarefa a remover: "))
+                remover_tarefa(indice)
+            except ValueError:
+                print("Erro: Por favor, digite um número válido.")
         elif opcao == "5":
-            nome = input("Nome da tarefa: ")
+            nome = input("Termo de busca: ")
             buscar_tarefa(nome)
         elif opcao == "0":
             print("Encerrando o programa...")
