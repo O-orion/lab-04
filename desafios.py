@@ -100,6 +100,8 @@ def menu():
         else:
             print("Opção inválida! Tente novamente.")
 
+menu()
+
 
 # Dica Final:
 # Quando terminar todos os desafios:
