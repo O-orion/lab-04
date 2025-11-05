@@ -17,15 +17,15 @@ def adicionar_tarefa(titulo):
     # TODO: implemente aqui lógica de adicionar tarefa
     tarefas.append(titulo)
 
-
 # Desafio 02: Listar todas as tarefas
-def listar_tarefas():
+def listar_tarefas(lista):
     """
     Exibe todas as tarefas da lista numeradas.
     Dica: use um for com enumerate() para mostrar o índice e o nome.
     """
     # TODO: implementar lógica de listagem
-    pass
+    for i in range(len(lista)):
+        print(lista[i])
 
 
 # Desafio 03: Marcar uma tarefa como concluída
