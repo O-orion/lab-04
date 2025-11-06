@@ -9,53 +9,58 @@ tarefas = []
 
 # Desafio 01: Adicionar uma nova tarefa
 def adicionar_tarefa(titulo):
-    """
-    Adiciona uma nova tarefa à lista.
-    Dica: use append() para inserir o título na lista 'tarefas'.
-    """
-    # TODO: implemente aqui lógica de adicionar tarefa
-    pass
-
+    if titulo.strip() == "":
+        print("Título inválido! Tente novamente.")
+        return
+    elif titulo in tarefas:
+        print(f"Tarefa '{titulo}' já existe! Tente novamente.")
+        return
+    else:
+        tarefas.append(titulo)
+        print(f"Tarefa '{titulo}' adicionada com sucesso!")
 
 # Desafio 02: Listar todas as tarefas
 def listar_tarefas():
-    """
-    Exibe todas as tarefas da lista numeradas.
-    Dica: use um for com enumerate() para mostrar o índice e o nome.
-    """
-    # TODO: implementar lógica de listagem
-    pass
+    if not tarefas:
+        print("Nenhuma tarefa encontrada.")
+        return
+    print("Tarefas:")
+    for i, tarefa in enumerate(tarefas, start=1):
+        print(f"{i}. {tarefa}")
+
 
 
 # Desafio 03: Marcar uma tarefa como concluída
 def concluir_tarefa(indice):
-    """
-    Marca uma tarefa como concluída.
-    Dica: você pode alterar o texto da tarefa adicionando um 'ok' no início.
-    Exemplo: 'Estudar Git' → 'Estudar Git - ok'
-    """
-    # TODO: implementar lógica de conclusão de tarefa
-    pass
-
+    for i in range(len(tarefas)):
+        if i == indice - 1:
+            if tarefas[i].endswith(" - ok"):
+                print(f"Tarefa '{tarefas[i]}' já está concluída.")
+            else:
+                tarefas[i] += " - ok"
+                print(f"Tarefa '{tarefas[i]}' marcada como concluída.")
+            return
 
 # Desafio 04: Remover uma tarefa
 def remover_tarefa(indice):
-    """
-    Remove uma tarefa pelo índice.
-    Dica: use pop() para remover da lista.
-    """
-    # TODO: implementar lógica de remoção
-    pass
+    if indice < 1 or indice > len(tarefas):
+        print("Índice inválido! Tente novamente.")
+        return
+    for i in range(len(tarefas)):
+        if i == indice - 1:
+            tarefas.pop(i)
+            print(f"Tarefa '{tarefas[i]}' removida com sucesso.")
+            return
 
 
 # Desafio 05: Buscar tarefa pelo nome
 def buscar_tarefa(nome):
-    """
-    Busca uma tarefa pelo nome e retorna se ela existe ou não.
-    Dica: use um loop para percorrer a lista e comparar strings.
-    """
-    # TODO: implementar lógica de busca
-    pass
+    if nome in tarefas:
+        print(f"Tarefa '{nome}' encontrada.")
+    elif nome + " - ok" in tarefas:
+        print(f"Tarefa '{nome}' encontrada (concluída).")
+    else:
+        print(f"Tarefa '{nome}' não encontrada.")
 
 
 # Desafio 06: Menu interativo (opcional)
@@ -102,4 +107,4 @@ def menu():
 # 2️ Faça commit das alterações, para cada commit crie uma tag.
 # 3️ Crie a tag final: tag: desafios-completos-v1.0
 
-# menu()  # Descomente para testar
+menu()  # Descomente para testar
