@@ -55,9 +55,11 @@ def remover_tarefa(indice):
     Remove uma tarefa pelo índice.
     Dica: use pop() para remover da lista.
     """
-    # TODO: implementar lógica de remoção
-    pass
-
+    if 0 <= indice < len(tarefas):
+        tarefa_removida = tarefas.pop(indice)
+        print(f"Tarefa '{tarefa_removida}' foi removida com sucesso!")
+    else:
+        print("Índice inválido. Nenhuma tarefa foi removida.")
 
 # Desafio 05: Buscar tarefa pelo nome
 def buscar_tarefa(nome):
@@ -65,9 +67,17 @@ def buscar_tarefa(nome):
     Busca uma tarefa pelo nome e retorna se ela existe ou não.
     Dica: use um loop para percorrer a lista e comparar strings.
     """
-    # TODO: implementar lógica de busca
-    pass
+    if not tarefas:
+        print("Nenhuma tarefa cadastrada para buscar.")
+        return
 
+    for tarefa in tarefas:
+        if tarefa.lower().startswith(nome.lower()):
+            print(f"Tarefa encontrada: {tarefa}")
+            return tarefa  # retorna o nome da tarefa encontrada
+
+    print(f"Nenhuma tarefa com o nome '{nome}' foi encontrada.")
+    return None    
 
 # Desafio 06: Menu interativo (opcional)
 def menu():
