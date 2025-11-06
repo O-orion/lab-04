@@ -43,13 +43,14 @@ def concluir_tarefa(indice):
 
 # Desafio 04: Remover uma tarefa
 def remover_tarefa(indice):
+    if indice < 1 or indice > len(tarefas):
+        print("Índice inválido! Tente novamente.")
+        return
     for i in range(len(tarefas)):
         if i == indice - 1:
             tarefas.pop(i)
             print(f"Tarefa '{tarefas[i]}' removida com sucesso.")
             return
-        else:
-            print("Índice inválido! Tente novamente.")
 
 
 # Desafio 05: Buscar tarefa pelo nome
