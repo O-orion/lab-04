@@ -48,6 +48,8 @@ def remover_tarefa(indice):
             tarefas.pop(i)
             print(f"Tarefa '{tarefas[i]}' removida com sucesso.")
             return
+        else:
+            print("Índice inválido! Tente novamente.")
 
 
 # Desafio 05: Buscar tarefa pelo nome
