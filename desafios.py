@@ -41,7 +41,6 @@ def concluir_tarefa(indice):
                 print(f"Tarefa '{tarefas[i]}' marcada como concluída.")
             return
 
-
 # Desafio 04: Remover uma tarefa
 def remover_tarefa(indice):
     """
