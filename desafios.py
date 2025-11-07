@@ -35,10 +35,6 @@ def buscar_tarefa(nome):
 
 # Desafio 06: Menu interativo (opcional)
 def menu():
-    """
-    Exibe um menu simples para testar o programa.
-    Dica: use um while True e input() para ler opções do usuário.
-    """
     while True:
         print("\n--- MENU TO-DO ---")
         print("1 - Adicionar tarefa")
@@ -71,10 +67,3 @@ def menu():
             print("Opção inválida! Tente novamente.")
 
 
-# Dica Final:
-# Quando terminar todos os desafios:
-# 1️ Teste todas as funções usando o menu()
-# 2️ Faça commit das alterações, para cada commit crie uma tag.
-# 3️ Crie a tag final: tag: desafios-completos-v1.0
-
-# menu()  # Descomente para testar
