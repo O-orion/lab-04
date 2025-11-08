@@ -44,10 +44,6 @@ def buscar_tarefa(nome):
 
 # Desafio 06: Menu interativo (opcional)
 def menu():
-    """
-    Exibe um menu simples para testar o programa.
-    Dica: use um while True e input() para ler opções do usuário.
-    """
     while True:
         print("\n--- MENU TO-DO ---")
         print("1 - Adicionar tarefa")
@@ -65,10 +61,10 @@ def menu():
         elif opcao == "2":
             listar_tarefas()
         elif opcao == "3":
-            indice = int(input("Número da tarefa: "))
+            indice = int(input("Número da tarefa: ")) - 1
             concluir_tarefa(indice)
         elif opcao == "4":
-            indice = int(input("Número da tarefa: "))
+            indice = int(input("Número da tarefa: ")) - 1
             remover_tarefa(indice)
         elif opcao == "5":
             nome = input("Nome da tarefa: ")
