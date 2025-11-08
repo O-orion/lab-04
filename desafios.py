@@ -1,10 +1,11 @@
 # Arquivo: desafios.py
 # Projeto: Mini To-Do List
 # Objetivo: completar as funções para que o sistema funcione corretamente
-# Dica: use apenas listas, loops e condicionais!
+# Dica: use apenas listas, loops e condicionais
 
 # Lista principal de tarefas
-tarefas = []
+def adicionar_tarefa(titulo):
+    tarefas.append(titulo)
 
 
 # Desafio 01: Adicionar uma nova tarefa
