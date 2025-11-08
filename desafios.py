@@ -4,18 +4,18 @@
 # Dica: use apenas listas, loops e condicionais
 
 # Lista principal de tarefas
+
+tarefas = []
+
+
 def adicionar_tarefa(titulo):
     tarefas.append(titulo)
 
 
 # Desafio 01: Adicionar uma nova tarefa
-def adicionar_tarefa(titulo):
-    """
-    Adiciona uma nova tarefa à lista.
-    Dica: use append() para inserir o título na lista 'tarefas'.
-    """
-    # TODO: implemente aqui lógica de adicionar tarefa
-    pass
+def listar_tarefas():
+    for i, tarefa in enumerate(tarefas):
+        print(f"{i + 1} - {tarefa}")
 
 
 # Desafio 02: Listar todas as tarefas
