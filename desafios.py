@@ -1,41 +1,30 @@
 # Arquivo: desafios.py
 # Projeto: Mini To-Do List
 # Objetivo: completar as funções para que o sistema funcione corretamente
-# Dica: use apenas listas, loops e condicionais!
+# Dica: use apenas listas, loops e condicionais
 
 # Lista principal de tarefas
+
 tarefas = []
 
-
 # Desafio 01: Adicionar uma nova tarefa
+
+
 def adicionar_tarefa(titulo):
-    """
-    Adiciona uma nova tarefa à lista.
-    Dica: use append() para inserir o título na lista 'tarefas'.
-    """
-    # TODO: implemente aqui lógica de adicionar tarefa
-    pass
+    tarefas.append(titulo)
 
 
 # Desafio 02: Listar todas as tarefas
 def listar_tarefas():
-    """
-    Exibe todas as tarefas da lista numeradas.
-    Dica: use um for com enumerate() para mostrar o índice e o nome.
-    """
-    # TODO: implementar lógica de listagem
-    pass
+    for i, tarefa in enumerate(tarefas):
+        print(f"{i + 1} - {tarefa}")
 
 
 # Desafio 03: Marcar uma tarefa como concluída
 def concluir_tarefa(indice):
-    """
-    Marca uma tarefa como concluída.
-    Dica: você pode alterar o texto da tarefa adicionando um 'ok' no início.
-    Exemplo: 'Estudar Git' → 'Estudar Git - ok'
-    """
-    # TODO: implementar lógica de conclusão de tarefa
-    pass
+    def concluir_tarefa(indice):
+    if 0 <= indice < len(tarefas):
+        tarefas[indice] = tarefas[indice] + " - ok"
 
 
 # Desafio 04: Remover uma tarefa
