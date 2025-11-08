@@ -83,12 +83,28 @@ def remover_tarefa(indice):
 
 # Desafio 05: Buscar tarefa pelo nome
 def buscar_tarefa(nome):
-    """
-    Busca uma tarefa pelo nome e retorna se ela existe ou não.
-    Dica: use um loop para percorrer a lista e comparar strings.
-    """
-    # TODO: implementar lógica de busca
-    pass
+    termo_busca = nome.strip().lower()
+    
+    if not termo_busca:
+        print("Erro: Termo de busca não pode ser vazio.")
+        return False
+
+    encontradas = []
+    # Loop para percorrer a lista
+    for tarefa in tarefas:
+        # Compara usando 'in' e '.lower()' para ser flexível
+        if termo_busca in tarefa.lower():
+            encontradas.append(tarefa)
+    
+    if not encontradas:
+        print(f"Nenhuma tarefa encontrada contendo '{nome}'.")
+        return False
+    else:
+        print(f"Tarefas encontradas com o termo '{nome}':")
+        for i, item in enumerate(encontradas, 1):
+            print(f"  {i} - {item}")
+        return True
+    
 
 
 # Desafio 06: Menu interativo (opcional)
