@@ -43,8 +43,18 @@ def concluir_tarefa(indice):
     Dica: você pode alterar o texto da tarefa adicionando um 'ok' no início.
     Exemplo: 'Estudar Git' → 'Estudar Git - ok'
     """
-    # TODO: implementar lógica de conclusão de tarefa
-    pass
+    indice -= 1
+    
+    # Valida se o índice é válido
+    if 0 <= indice < len(tarefas):
+        # Verifica se já está marcada
+        if not tarefas[indice].endswith(" - ok"):
+            tarefas[indice] += " - ok"
+            print(f"Tarefa '{tarefas[indice]}' concluída com sucesso!")
+        else:
+            print("A tarefa já está concluída.")
+    else:
+        print("Índice inválido. Tente novamente.")
 
 
 # Desafio 04: Remover uma tarefa
