@@ -38,7 +38,7 @@ def concluir_tarefa(indice):
     Exemplo: 'Estudar Git' → 'Estudar Git - ok'
     """
     # TODO: implementar lógica de conclusão de tarefa
-    pass
+    tarefas[indice] = tarefas[indice] + "- ok"
 
 
 # Desafio 04: Remover uma tarefa
@@ -48,7 +48,7 @@ def remover_tarefa(indice):
     Dica: use pop() para remover da lista.
     """
     # TODO: implementar lógica de remoção
-    pass
+    tarefas.pop(indice)
 
 
 # Desafio 05: Buscar tarefa pelo nome
