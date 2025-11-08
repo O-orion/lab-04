@@ -4,7 +4,8 @@
 # Dica: use apenas listas, loops e condicionais!
 
 # Lista principal de tarefas
-tarefas = []
+def adicionar_tarefa(titulo):
+    tarefas.append(titulo)
 
 
 # Desafio 01: Adicionar uma nova tarefa
