@@ -91,7 +91,7 @@ def remover_tarefa(indice):
 def buscar_tarefa(nome):
     """
     Busca uma tarefa pelo nome e retorna se ela existe ou não.
-    Dica: use um loop para percorrer a lista e comparar strings.
+    Dica: use um loop para percorrer a lista e comparar strings.g.
     """
     nome = (nome or "").strip()
     if not tarefas:
@@ -123,35 +123,49 @@ def menu():
     Dica: use um while True e input() para ler opções do usuário.
     """
     while True:
-        print("\n--- MENU TO-DO ---")
-        print("1 - Adicionar tarefa")
-        print("2 - Listar tarefas")
-        print("3 - Concluir tarefa")
-        print("4 - Remover tarefa")
-        print("5 - Buscar tarefa")
-        print("0 - Sair")
+        try:
+            print("\n--- MENU TO-DO ---")
+            print("1 - Adicionar tarefa")
+            print("2 - Listar tarefas")
+            print("3 - Concluir tarefa")
+            print("4 - Remover tarefa")
+            print("5 - Buscar tarefa")
+            print("0 - Sair")
 
-        opcao = input("Escolha: ")
+            opcao = input("Escolha: ").strip()
 
-        if opcao == "1":
-            titulo = input("Título da tarefa: ")
-            adicionar_tarefa(titulo)
-        elif opcao == "2":
-            listar_tarefas()
-        elif opcao == "3":
-            indice = int(input("Número da tarefa: "))
-            concluir_tarefa(indice)
-        elif opcao == "4":
-            indice = int(input("Número da tarefa: "))
-            remover_tarefa(indice)
-        elif opcao == "5":
-            nome = input("Nome da tarefa: ")
-            buscar_tarefa(nome)
-        elif opcao == "0":
-            print("Encerrando o programa...")
+            if opcao == "1":
+                titulo = input("Título da tarefa: ")
+                adicionar_tarefa(titulo)
+            elif opcao == "2":
+                listar_tarefas()
+            elif opcao == "3":
+                entrada = input("Número da tarefa: ").strip()
+                try:
+                    indice = int(entrada)
+                except (ValueError, TypeError):
+                    print("Índice inválido. Informe um número válido.")
+                else:
+                    concluir_tarefa(indice)
+            elif opcao == "4":
+                entrada = input("Número da tarefa: ").strip()
+                try:
+                    indice = int(entrada)
+                except (ValueError, TypeError):
+                    print("Índice inválido. Informe um número válido.")
+                else:
+                    remover_tarefa(indice)
+            elif opcao == "5":
+                nome = input("Nome da tarefa: ")
+                buscar_tarefa(nome)
+            elif opcao == "0":
+                print("Encerrando o programa...")
+                break
+            else:
+                print("Opção inválida! Tente novamente.")
+        except KeyboardInterrupt:
+            print("\nInterrompido pelo usuário. Encerrando...")
             break
-        else:
-            print("Opção inválida! Tente novamente.")
 
 
 # Dica Final:
@@ -160,4 +174,6 @@ def menu():
 # 2️ Faça commit das alterações, para cada commit crie uma tag.
 # 3️ Crie a tag final: tag: desafios-completos-v1.0
 
-# menu()  # Descomente para testar
+if __name__ == "__main__":
+    # Executa o menu interativo quando o arquivo for executado diretamente
+    menu()
