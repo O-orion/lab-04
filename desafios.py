@@ -91,7 +91,7 @@ def remover_tarefa(indice):
 def buscar_tarefa(nome):
     """
     Busca uma tarefa pelo nome e retorna se ela existe ou não.
-    Dica: use um loop para percorrer a lista e comparar strings.
+    Dica: use um loop para percorrer a lista e comparar strings.g.
     """
     nome = (nome or "").strip()
     if not tarefas:
