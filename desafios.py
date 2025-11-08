@@ -39,6 +39,7 @@ def concluir_tarefa(indice):
     """
     # TODO: implementar lógica de conclusão de tarefa
     pass
+    tarefas[indice] = tarefas[indice] + "- ok"
 
 
 # Desafio 04: Remover uma tarefa
