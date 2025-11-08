@@ -1,69 +1,49 @@
 # Arquivo: desafios.py
 # Projeto: Mini To-Do List
 # Objetivo: completar as funções para que o sistema funcione corretamente
-# Dica: use apenas listas, loops e condicionais!
+# Dica: use apenas listas, loops e condicionais
 
 # Lista principal de tarefas
+
 tarefas = []
 
-
 # Desafio 01: Adicionar uma nova tarefa
+
+
 def adicionar_tarefa(titulo):
-    """
-    Adiciona uma nova tarefa à lista.
-    Dica: use append() para inserir o título na lista 'tarefas'.
-    """
-    # TODO: implemente aqui lógica de adicionar tarefa
-    pass
+    tarefas.append(titulo)
 
 
 # Desafio 02: Listar todas as tarefas
 def listar_tarefas():
-    """
-    Exibe todas as tarefas da lista numeradas.
-    Dica: use um for com enumerate() para mostrar o índice e o nome.
-    """
-    # TODO: implementar lógica de listagem
-    pass
+    for i, tarefa in enumerate(tarefas):
+        print(f"{i + 1} - {tarefa}")
 
 
 # Desafio 03: Marcar uma tarefa como concluída
 def concluir_tarefa(indice):
-    """
-    Marca uma tarefa como concluída.
-    Dica: você pode alterar o texto da tarefa adicionando um 'ok' no início.
-    Exemplo: 'Estudar Git' → 'Estudar Git - ok'
-    """
-    # TODO: implementar lógica de conclusão de tarefa
-    pass
+    def concluir_tarefa(indice):
+    if 0 <= indice < len(tarefas):
+        tarefas[indice] = tarefas[indice] + " - ok"
 
 
 # Desafio 04: Remover uma tarefa
 def remover_tarefa(indice):
-    """
-    Remove uma tarefa pelo índice.
-    Dica: use pop() para remover da lista.
-    """
-    # TODO: implementar lógica de remoção
-    pass
+    if 0 <= indice < len(tarefas):
+        tarefas.pop(indice)
 
 
 # Desafio 05: Buscar tarefa pelo nome
 def buscar_tarefa(nome):
-    """
-    Busca uma tarefa pelo nome e retorna se ela existe ou não.
-    Dica: use um loop para percorrer a lista e comparar strings.
-    """
-    # TODO: implementar lógica de busca
-    pass
+    for tarefa in tarefas:
+        if nome.lower() in tarefa.lower():
+            print(f"Tarefa encontrada: {tarefa}")
+            return
+    print("Tarefa não encontrada.")
 
 
 # Desafio 06: Menu interativo (opcional)
 def menu():
-    """
-    Exibe um menu simples para testar o programa.
-    Dica: use um while True e input() para ler opções do usuário.
-    """
     while True:
         print("\n--- MENU TO-DO ---")
         print("1 - Adicionar tarefa")
@@ -81,10 +61,10 @@ def menu():
         elif opcao == "2":
             listar_tarefas()
         elif opcao == "3":
-            indice = int(input("Número da tarefa: "))
+            indice = int(input("Número da tarefa: ")) - 1
             concluir_tarefa(indice)
         elif opcao == "4":
-            indice = int(input("Número da tarefa: "))
+            indice = int(input("Número da tarefa: ")) - 1
             remover_tarefa(indice)
         elif opcao == "5":
             nome = input("Nome da tarefa: ")
