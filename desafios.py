@@ -124,6 +124,9 @@ def menu():
         else:
             print("Opção inválida! Tente novamente.")
 
+# Executa o menu interativo para testar o programa
+if __name__ == "__main__":
+    menu()
 
 # Dica Final:
 # Quando terminar todos os desafios:
