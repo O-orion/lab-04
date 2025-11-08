@@ -7,36 +7,24 @@
 
 tarefas = []
 
+# Desafio 01: Adicionar uma nova tarefa
+
 
 def adicionar_tarefa(titulo):
     tarefas.append(titulo)
 
 
-# Desafio 01: Adicionar uma nova tarefa
+# Desafio 02: Listar todas as tarefas
 def listar_tarefas():
     for i, tarefa in enumerate(tarefas):
         print(f"{i + 1} - {tarefa}")
 
 
-# Desafio 02: Listar todas as tarefas
-def listar_tarefas():
-    """
-    Exibe todas as tarefas da lista numeradas.
-    Dica: use um for com enumerate() para mostrar o índice e o nome.
-    """
-    # TODO: implementar lógica de listagem
-    pass
-
-
 # Desafio 03: Marcar uma tarefa como concluída
 def concluir_tarefa(indice):
-    """
-    Marca uma tarefa como concluída.
-    Dica: você pode alterar o texto da tarefa adicionando um 'ok' no início.
-    Exemplo: 'Estudar Git' → 'Estudar Git - ok'
-    """
-    # TODO: implementar lógica de conclusão de tarefa
-    pass
+    def concluir_tarefa(indice):
+    if 0 <= indice < len(tarefas):
+        tarefas[indice] = tarefas[indice] + " - ok"
 
 
 # Desafio 04: Remover uma tarefa
