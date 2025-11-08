@@ -168,7 +168,7 @@ def menu():
             break
 
 
-# Dica Final:
+# Dica Final: // desaio completo
 # Quando terminar todos os desafios:
 # 1️ Teste todas as funções usando o menu()
 # 2️ Faça commit das alterações, para cada commit crie uma tag.
