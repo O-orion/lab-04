@@ -22,7 +22,6 @@ def listar_tarefas():
     Exibe todas as tarefas da lista numeradas.
     Dica: use um for com enumerate() para mostrar o índice e o nome.
     """
-
     if not tarefas:
         print("Nenhuma tarefa cadastrada.")
         return
@@ -39,8 +38,22 @@ def concluir_tarefa(indice):
     Dica: você pode alterar o texto da tarefa adicionando um 'ok' no início.
     Exemplo: 'Estudar Git' → 'Estudar Git - ok'
     """
-    # TODO: implementar lógica de conclusão de tarefa
-    pass
+    # converte número (1-based) para índice da lista (0-based)
+    idx = indice - 1
+
+    # valida índice
+    if idx < 0 or idx >= len(tarefas):
+        print("Índice inválido!")
+        return
+
+    # se já estiver marcada, avisa e retorna
+    if isinstance(tarefas[idx], str) and tarefas[idx].endswith(" - ok"):
+        print("Tarefa já concluída.")
+        return
+
+    # marca como concluída adicionando ' - ok' ao final
+    tarefas[idx] = f"{tarefas[idx]} - ok"
+    print(f"Tarefa {indice} marcada como concluída.")
 
 
 # Desafio 04: Remover uma tarefa
