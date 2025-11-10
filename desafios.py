@@ -81,8 +81,21 @@ def buscar_tarefa(nome):
     Busca uma tarefa pelo nome e retorna se ela existe ou não.
     Dica: use um loop para percorrer a lista e comparar strings.
     """
-    # TODO: implementar lógica de busca
-    pass
+    # se a lista estiver vazia, já retorna que não encontrou
+    if not tarefas:
+        print("Nenhuma tarefa cadastrada.")
+        return False
+    
+    # percorre a lista procurando pelo nome (case insensitive)
+    for tarefa in tarefas:
+        # remove o " - ok" se existir, para comparar só o nome
+        nome_tarefa = tarefa.replace(" - ok", "")
+        if nome.lower() in nome_tarefa.lower():
+            print(f"Tarefa encontrada: {tarefa}")
+            return True
+    
+    print("Tarefa não encontrada.")
+    return False
 
 
 # Desafio 06: Menu interativo (opcional)
