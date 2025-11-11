@@ -15,7 +15,11 @@ def adicionar_tarefa(titulo):
     Dica: use append() para inserir o título na lista 'tarefas'.
     """
     # TODO: implemente aqui lógica de adicionar tarefa
-    tarefas.append(titulo)
+    tarefas.append([titulo])
+
+adicionar_tarefa("tarefa 1")
+adicionar_tarefa("tarefa 2")
+print(tarefas)
 
 # Desafio 02: Listar todas as tarefas
 def listar_tarefas(lista):
@@ -26,6 +30,8 @@ def listar_tarefas(lista):
     # TODO: implementar lógica de listagem
     for i in range(len(lista)):
         print(lista[i])
+
+listar_tarefas(tarefas)
 
 
 # Desafio 03: Marcar uma tarefa como concluída
@@ -38,7 +44,6 @@ def concluir_tarefa(indice):
     # TODO: implementar lógica de conclusão de tarefa
     pass
 
-
 # Desafio 04: Remover uma tarefa
 def remover_tarefa(indice):
     """
@@ -46,7 +51,10 @@ def remover_tarefa(indice):
     Dica: use pop() para remover da lista.
     """
     # TODO: implementar lógica de remoção
-    pass
+    tarefas.pop()
+
+remover_tarefa(tarefas)
+print(tarefas)
 
 
 # Desafio 05: Buscar tarefa pelo nome
